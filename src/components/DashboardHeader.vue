@@ -9,7 +9,7 @@ defineProps({
 <template>
   <header class="dashboard-header">
     <div>
-      <p class="eyebrow">KOREA WEATHER DESK</p>
+      <p class="eyebrow">LOCAL WEATHER</p>
       <h1>오늘의 하늘을<br><em>한눈에.</em></h1>
       <p class="status-message" aria-live="polite">{{ statusMessage }}</p>
       <p v-if="favoriteCity" class="favorite-message">
@@ -28,11 +28,11 @@ defineProps({
   padding: 0 4px;
   margin-bottom: 28px;
 }
-.eyebrow { margin:0 0 10px; color:#4285b5; font-size:11px; font-weight:850; letter-spacing:2px; }
-h1 { margin: 0; color: #17243a; font-family: Georgia,serif; font-size: 52px; line-height:.98; letter-spacing: -2.5px; } h1 em{color:#2c7bb2;font-weight:500}
+.eyebrow { margin:0 0 10px; color:var(--primary-700); font-size:11px; font-weight:700; letter-spacing:1.4px; }
+h1 { margin: 0; color: var(--primary-900); font-size:46px; font-weight:700; line-height:1.16; letter-spacing:-1.8px; } h1 em{color:var(--primary-700);font-style:normal;font-weight:700}
 .status-message,
 .favorite-message { margin: 8px 0 0; color: #65748a; font-size: 14px; }
-.favorite-message { color: #9a681d; font-weight: 700; }
-.data-badge{display:inline-flex;align-items:center;gap:7px;margin:14px 0 0;padding:6px 10px;color:#65748a;font-size:11px;background:#fff;border:1px solid #dae4ed;border-radius:99px}.data-badge span{width:7px;height:7px;background:#e49b4c;border-radius:50%}.data-badge span.live{background:#3caf75;box-shadow:0 0 0 3px #dff5e9}
+.favorite-message { color: var(--primary-700); font-weight: 700; }
+.data-badge{display:inline-flex;align-items:center;gap:7px;margin:14px 0 0;padding:6px 10px;color:#5e6f83;font-size:11px;background:#fff;border:1px solid var(--grey-200);border-radius:8px}.data-badge span{width:7px;height:7px;background:var(--primary-500);border-radius:50%}.data-badge span.live{background:#4f9c7b;box-shadow:0 0 0 3px #e1f2eb}
 @media (max-width: 520px) { h1 { font-size: 31px; } }
 </style>
