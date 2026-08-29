@@ -1,8 +1,8 @@
 <script setup>
 import { computed } from 'vue'
 import Button from 'primevue/button'
-import { weatherEmoji } from '../data/cities'
-import { useTemperature } from '../composables/useTemperature'
+import { weatherEmoji } from '../../data/cities'
+import { useTemperature } from '../../composables/useTemperature'
 
 const props = defineProps({ city: { type: Object, required: true }, isFavorite: { type: Boolean, default: false }, selected: { type: Boolean, default: false } })
 const emit = defineEmits(['select-card', 'click-detail', 'toggle-favorite', 'open-context-menu'])
