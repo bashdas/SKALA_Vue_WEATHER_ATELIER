@@ -1,5 +1,5 @@
 <script setup>
-import { useRouter } from 'vue-router'; import Button from 'primevue/button'; import { storeToRefs } from 'pinia'; import WeatherCard from '../components/WeatherCard.vue'; import { useWeatherStore } from '../stores/weatherStore'
+import { useRouter } from 'vue-router'; import Button from 'primevue/button'; import { storeToRefs } from 'pinia'; import WeatherCard from '../components/exercise/WeatherCard.vue'; import { useWeatherStore } from '../stores/weatherStore'
 const store=useWeatherStore(); const router=useRouter(); const {favoriteCities,selectedCityId}=storeToRefs(store)
 const detail=(city)=>router.push({name:'weather-detail',params:{cityId:city.id}})
 </script>

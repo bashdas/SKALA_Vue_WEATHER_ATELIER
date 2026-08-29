@@ -1,9 +1,9 @@
 <script setup>
 import { computed, ref, watch, watchEffect } from 'vue'
-import BaseDashboardCard from './BaseDashboardCard.vue'
+import BaseDashboardCard from './exercise/BaseDashboardCard.vue'
 import DashboardHeader from './DashboardHeader.vue'
-import SearchBar from './SearchBar.vue'
-import WeatherCard from './WeatherCard.vue'
+import SearchBar from './exercise/SearchBar.vue'
+import WeatherCard from './exercise/WeatherCard.vue'
 
 const weatherList = ref([
   { id: 'city_01', name: '서울', temp: 28, feelsLike: 30, status: '맑음', icon: '☀️', humidity: 58, rain: 10, wind: 2.1 },
