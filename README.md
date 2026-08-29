@@ -103,7 +103,7 @@ API 키가 없거나 아직 활성화되지 않은 경우 OpenWeatherMap이 `401
 - 전부 실패해도 흰 화면 대신 Mock 카드와 원인을 안내합니다.
 - 일부만 실패하면 성공 데이터와 fallback 데이터를 함께 표시합니다.
 
-Axios 오류는 `readableApiError()`에서 timeout, 네트워크, 401, 404로 나누어 사용자 메시지로 변환했습니다. 현재 제공된 키는 OpenWeatherMap에서 `401`을 반환하고 있어 이 fallback 경로까지 실제 브라우저에서 검증했습니다. 키가 활성화되면 같은 코드에서 자동으로 실시간 모드로 전환됩니다.
+Axios 오류는 `readableApiError()`에서 timeout, 네트워크, 401, 404로 나누어 사용자 메시지로 변환합니다. OpenWeatherMap 키가 정상화된 뒤 Vercel 환경 변수에 등록하고, 배포본에서 실시간 현재 날씨와 5일 예보가 표시되는 것을 확인했습니다. 장애 상황에서도 같은 fallback 경로가 동작하도록 유지합니다.
 
 ### 7. 외부 도시 검색과 날씨 API를 한 요청처럼 묶지 않은 이유
 
@@ -198,7 +198,7 @@ Vue Router의 history 모드에서는 앱 내부 링크 이동은 정상이어�
 
 ## 다음 단계에서 개선하고 싶은 점
 
-- OpenWeatherMap 키가 정상화되면 실시간 현재 날씨와 5일 예보를 배포 환경에서 다시 검증합니다.
+- OpenWeatherMap 키 정상화 후 Vercel 배포 환경에서 실시간 현재 날씨와 5일 예보를 검증했습니다.
 - API 키 보호가 중요한 운영 환경이라면 Vercel Serverless Function을 프록시로 추가합니다.
 - Vitest와 Vue Test Utils를 추가해 Store, mapper, 온도 변환을 자동 테스트합니다.
 - Playwright E2E 테스트로 검색, 즐겨찾기, 단위 전환, 상세 이동, 우클릭 메뉴를 회귀 테스트합니다.
@@ -229,13 +229,15 @@ npm run preview
 
 ## 과제 제출 전 확인
 
-- Public GitHub 저장소가 시크릿 창에서 로그인 없이 열리는지 확인합니다.
-- 배포 URL에서 새로고침과 `/weather/:cityId` 직접 접근이 정상인지 확인합니다.
+- Public GitHub 저장소가 시크릿 창에서 로그인 없이 열리는지 확인했습니다.
+- Vercel 배포 URL에서 새로고침과 `/weather/:cityId` 직접 접근이 정상임을 확인했습니다.
 - README의 개인 커스터마이징, 이벤트 단축키, 사용 라이브러리/API 내역을 최신 상태로 유지합니다.
 
-## 현재 검증 상태
+## 최종 검증 상태
 
 - `npm run lint`, `npm run build` 통과
 - 홈, 상세 동적 경로, 404, 섭씨/화씨, 외부 도시 검색, 우클릭 메뉴, `/` 검색 단축키 확인
-- 제공된 OpenWeatherMap 키는 2026-08-27 현재 API에서 401 응답을 반환하여 Mock fallback으로 표시 중
-- GitHub Public 공개와 정적 호스팅은 아직 수행하지 않음
+- OpenWeatherMap API 키 정상화 및 Vercel Production 환경 변수(`VITE_OPENWEATHER_API_KEY`) 등록 완료
+- 배포본에서 실시간 현재 날씨와 5일 예보 표시 확인
+- GitHub Public 저장소 및 Vercel 정적 호스팅 완료
+- Vercel rewrite 설정으로 `/weather/:cityId` 직접 접근·새로고침과 catch-all 404 동작 확인
