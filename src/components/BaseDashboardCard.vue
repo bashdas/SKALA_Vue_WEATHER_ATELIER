@@ -23,9 +23,9 @@ defineProps({
 <style scoped>
 .dashboard-card {
   background: #fff;
-  border: 1px solid #e3e9f1;
+  border: 1px solid #cdd6de;
   border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(35, 50, 71, 0.05);
+  box-shadow: none;
 }
 
 .dashboard-card--panel { padding: 22px 24px; }
@@ -43,7 +43,7 @@ defineProps({
 .dashboard-card--weather:focus-within { transform: translateY(-7px); }
 
 .dashboard-card--weather.dashboard-card--selected {
-  border-color: #4d8fcb;
-  box-shadow: 0 0 0 3px rgba(77, 143, 203, 0.14), 0 13px 28px rgba(35, 50, 71, 0.12);
+  border-color: #5e8acc;
+  box-shadow: 0 0 0 3px #c8deff;
 }
 </style>

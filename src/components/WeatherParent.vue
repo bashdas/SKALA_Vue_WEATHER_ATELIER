@@ -93,16 +93,16 @@ const showDetail = (weather) => {
 .weather-page { min-height: 100vh; padding: 56px 24px 72px; }
 .weather-dashboard { width: min(1040px, 100%); margin: 0 auto; }
 .weather-section-heading { margin: 28px 4px 15px; }
-.weather-section-heading h2 { margin: 0; color: #1d2c43; font-size: 22px; letter-spacing: -0.5px; }
-.weather-section-heading p { margin: 6px 0 0; color: #7c899a; font-size: 14px; }
+.weather-section-heading h2 { margin: 0; color: #3b5780; font-size: 22px; letter-spacing: -0.5px; }
+.weather-section-heading p { margin: 6px 0 0; color: #3b5780; font-size: 14px; }
 .weather-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .empty-message {
   padding: 42px 24px;
   margin: 0;
-  color: #718096;
+  color: #3b5780;
   text-align: center;
   background: #fff;
-  border: 1px dashed #cbd5e1;
+  border: 1px dashed #cdd6de;
   border-radius: 16px;
 }
 @media (max-width: 780px) {

@@ -31,7 +31,7 @@ defineExpose({ focus: () => inputRef.value?.$el?.focus() })
 .search-bar label {
   display: block;
   margin-bottom: 9px;
-  color: #34445c;
+  color: #3b5780;
   font-size: 15px;
   font-weight: 700;
 }
@@ -41,28 +41,28 @@ defineExpose({ focus: () => inputRef.value?.$el?.focus() })
   align-items: center;
   gap: 10px;
   padding: 0 14px;
-  background: #f8fafc;
-  border: 1px solid #d9e1eb;
+  background: #e6eaed;
+  border: 1px solid #cdd6de;
   border-radius: 10px;
 }
 
 .search-input-wrap:focus-within {
   background: #fff;
-  border-color: #4d8fcb;
-  box-shadow: 0 0 0 3px rgba(77, 143, 203, 0.1);
+  border-color: #5e8acc;
+  box-shadow: 0 0 0 3px #c8deff;
 }
 
 .search-input-wrap span { font-size: 17px; }
 .search-input-wrap input {
   width: 100%;
   padding: 12px 0;
-  color: #243247;
+  color: #3b5780;
   background: transparent;
   border: 0;
   outline: 0;
 }
 .search-input-wrap :deep(.p-button) { flex: 0 0 auto; }
-.search-input-wrap input::placeholder { color: #9aa6b5; }
-.search-bar p { margin: 11px 2px 0; color: #718096; font-size: 14px; }
-.search-bar strong { color: #3275b4; }
+.search-input-wrap input::placeholder { color: #5e8acc; }
+.search-bar p { margin: 11px 2px 0; color: #3b5780; font-size: 14px; }
+.search-bar strong { color: #5e8acc; }
 </style>
